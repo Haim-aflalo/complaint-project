@@ -3,10 +3,10 @@ import AdminConnect from '../components/AdminConnect';
 
 function HomePage() {
   return (
-    <>
+    <div class="home">
       <ComplaintsLink />
       <AdminConnect />
-    </>
+    </div>
   );
 }
 

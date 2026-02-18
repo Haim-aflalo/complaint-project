@@ -10,6 +10,7 @@ export const complaintsRouter = express.Router();
 complaintsRouter.post('/complaints', (req, res) => {
   createComplaint(req, res);
 });
+
 complaintsRouter.get('/complaints', checkToken, (req, res) => {
   getComplaint(req, res);
 });

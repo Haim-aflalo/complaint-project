@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import Home from './Home';
 function ComplaintForm() {
   const [data, setData] = useState({ category: '', message: '' });
   // const [result, setResult] = useState({});
@@ -47,6 +47,7 @@ function ComplaintForm() {
         </button>
         {/* <div id="result">{result.message}</div> */}
       </form>
+      <Home></Home>
     </>
   );
 }

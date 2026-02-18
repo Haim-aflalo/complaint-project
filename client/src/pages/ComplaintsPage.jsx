@@ -1,7 +1,10 @@
-import ComplaintForm from '../components/ComplaintForm';
-
+import ComplaintsTable from '../components/ComplaintsTable';
 function ComplaintsPage() {
-  return <ComplaintForm />;
+  return (
+    <>
+      <ComplaintsTable />
+    </>
+  );
 }
 
 export default ComplaintsPage;
