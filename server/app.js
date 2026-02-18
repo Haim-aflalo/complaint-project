@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import { complaintsRouter } from './routes/complaints.router.js';
-import { adminRouter } from './routes/admin.router.js';
-import { connectMongo } from './db/connect.js';
+import { complaintsRouter } from './src/routes/complaints.router.js';
+import { adminRouter } from './src/routes/admin.router.js';
+import { connectMongo } from './src/db/connect.js';
 
 const app = express();
 app.use(cors());
