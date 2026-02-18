@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Home from './Home';
 function ComplaintsTable() {
   const [complaints, setComplaints] = useState([]);
+  const [category, setCategory] = useState('all');
 
   useEffect(() => {
     async function fetchData() {
@@ -26,13 +27,34 @@ function ComplaintsTable() {
   return (
     <div>
       <ul>
-        {complaints.map((complaint) => (
-          <li key={complaint._id}>
-            <div>Category:{complaint.category}</div>
-            <div>Category:{complaint.message}</div>
-          </li>
-        ))}
+        {complaints
+          .filter(
+            (complaint) =>
+              complaint.category === category || category === 'all',
+          )
+          .map((complaint) => (
+            <li key={complaint._id}>
+              <div>Category:{complaint.category}</div>
+              <div>Message:{complaint.message}</div>
+              <div>Date:{complaint.createdAt}</div>
+            </li>
+          ))}
       </ul>
+      <select
+        name="category"
+        id="category"
+        onChange={(e) => {
+          setCategory(e.target.value);
+        }}
+      >
+        <option value=""> Choose a category</option>
+        <option value="all"> All</option>
+        <option value="food">Food</option>
+        <option value="weapons">Weapons</option>
+        <option value="uniform">Uniform</option>
+        <option value="courses">Courses</option>
+      </select>
+
       <Home></Home>
     </div>
   );
